@@ -2,16 +2,21 @@ import type { MessageProps } from '../models/message';
 
 function Typing({ from, message }: MessageProps) {
   return (
-    <li>
+    <li className="typing">
       <div className="message-data">
         <span className="message-data-name">
           <i className="fa fa-circle online"></i> {from.name}
         </span>
         <span className="message-data-time">{message.time}</span>
       </div>
-      <i className="fa fa-circle online"></i>
-      <i className="fa fa-circle online" style={{ color: '#AED2A6' }}></i>
-      <i className="fa fa-circle online" style={{ color: '#DAE9DA' }}></i>
+      <div className="message typing-message">
+        <span>печатает…</span>
+        <span className="typing-dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
     </li>
   );
 }
